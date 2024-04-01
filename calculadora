@@ -1,9 +1,39 @@
 <!DOCTYPE html>
 <html lang = "pt-BR">
 <head>
+<style>
 
+skeleton{
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 500px;
+height: 800px;
+background-image: linear-gradient(to bottom right,rgb(12, 201, 214),rgb(12, 68, 198));
+}
+
+</style>
 </head>
 <body>
+<skeleton>Random Text.</skeleton>
 
+<script>
+
+function adicao(a,b){
+return a + b;
+}
+function subtracao(a,b){
+return a - b;
+}
+function multiplicacao(a,b){
+return a * b;
+}
+function divisao(a,b){
+return a / b;
+}
+function porcentagem(a){
+return 
+}
+
+</script>
 </body>
-</html>
