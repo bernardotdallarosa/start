@@ -3,19 +3,36 @@
 <head>
 <style>
 
-skeleton{
+div{
 display: block;
 margin-left: auto;
 margin-right: auto;
 width: 500px;
 height: 800px;
 background-image: linear-gradient(to bottom right,rgb(12, 201, 214),rgb(12, 68, 198));
+border-style: solid;
+border-color: rgb(0, 0, 0);
 }
 
+.btn{
+cursor: pointer;
+background-color: transparent;
+height: 80px;
+width: 80px;
+text-align: center;
+display: inline-block;
+font-size: 50px;
+margin: 12px 20px;
+}
 </style>
 </head>
 <body>
-<skeleton>Random Text.</skeleton>
+<div>
+<button class="btn">1</button>
+<button class="btn">2</button>
+<button class="btn">3</button>
+<button class="btn">-</button>
+</div>
 
 <script>
 
@@ -31,9 +48,7 @@ return a * b;
 function divisao(a,b){
 return a / b;
 }
-function porcentagem(a){
-return 
-}
 
 </script>
 </body>
+</html>
