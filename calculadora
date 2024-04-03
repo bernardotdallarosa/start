@@ -31,6 +31,7 @@ flex: 1;
 
 .btn{
 cursor: pointer;
+border:transparent;
 background-color: transparent;
 height: 60px;
 width: 60px;
