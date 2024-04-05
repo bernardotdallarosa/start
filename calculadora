@@ -41,7 +41,10 @@ border-radius:15px;
 background-color: rgb(46, 221, 71);
 height: 75px;
 width: 75px;
+box-shadow: 5px 5px 2px;
 text-align: center;
+font-family: 'Courier New', monospace;
+text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 display: inline-block;
 font-size: 32px;
 margin: 10px 23px;
@@ -59,11 +62,11 @@ background-color: green;
     </div>
     <div class="keys">
         <div class="line">
-        <button class="btn" onclick="emp()">AC</button>
-        <button class="btn">( )</button>
+        <button class="btn">AC</button>
+        <button class="btn">()</button>
         <button class="btn">%</button>
         <button class="btn">+</button>
-        <button class="btn" onclick="dis('1')">1</button>
+        <button class="btn">1</button>
         <button class="btn">2</button>
         <button class="btn">3</button>
         <button class="btn">-</button>
