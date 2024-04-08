@@ -16,13 +16,16 @@ border-bottom: 6px solid rgb(0, 0, 0);
 }
 
 .screen{
+display: flex;
+align-items: flex-end;
+flex-direction: row-reverse;
 width: 500px;
 height: 300px;
 border-bottom: 6px solid black;
 border-top: 10px solid black;
+font-size: 80px;
 background-image: linear-gradient(rgb(128, 128, 128), rgb(212, 212, 212));
 text-align: right;
-overflow: auto;
 }
 
 .keys{
@@ -34,7 +37,7 @@ align-items: center;
 flex: 1;
 }
 
-.btn{
+button{
 cursor: pointer;
 border:solid rgb(255, 180, 71);
 border-width:2px;
@@ -51,50 +54,95 @@ font-size: 32px;
 margin: 10px 23px;
 }
 
-.btn:hover{
+button:hover{
 background-color: rgb(15, 132, 71);
 }
 
-.btn:active{
-background-color: rgb(90, 90, 90);
+button:active{
+background-color: rgb(128, 77, 77);
 }
 
 </style>
 </head>
 <body>
 <div class="skeleton">
-    <div class="screen">
+    <div id="demo" class="screen">
+        0
     </div>
     <div class="keys">
         <div class="line">
-        <button class="btn" onclick="">AC</button>
-        <button class="btn" onclick="">()</button>
-        <button class="btn" onclick="">%</button>
-        <button class="btn" onclick="">+</button>
-        <button class="btn" onclick="">1</button>
-        <button class="btn" onclick="">2</button>
-        <button class="btn" onclick="">3</button>
-        <button class="btn" onclick="">-</button>
-        <button class="btn" onclick="">4</button>
-        <button class="btn" onclick="">5</button>
-        <button class="btn" onclick="">6</button>
-        <button class="btn" onclick="">x</button>
-        <button class="btn" onclick="">7</button>
-        <button class="btn" onclick="">8</button>
-        <button class="btn" onclick="">9</button>
-        <button class="btn" onclick="">÷</button>
-        <button class="btn" onclick="">Del</button>
-        <button class="btn" onclick="">0</button>
-        <button class="btn" onclick="">.</button>
-        <button class="btn" onclick="">=</button>
+        <button onclick="emp()">AC</button>
+        <button onclick="">()</button>
+        <button onclick="">%</button>
+        <button onclick="disadicao()">+</button>
+        <button value="1" onclick="dis1()">1</button>
+        <button onclick="dis2()">2</button>
+        <button onclick="dis3()">3</button>
+        <button onclick="dissubtracao()">-</button>
+        <button onclick="dis4()">4</button>
+        <button onclick="dis5()">5</button>
+        <button onclick="dis6()">6</button>
+        <button onclick="dismultiplicacao()">x</button>
+        <button onclick="dis7()">7</button>
+        <button onclick="dis8()">8</button>
+        <button onclick="dis9()">9</button>
+        <button onclick="disdivisao()">÷</button>
+        <button onclick="dis2">Del</button>
+        <button onclick="dis0()">0</button>
+        <button onclick="">.</button>
+        <button onclick="">=</button>
         </div>
     </div>
 </div>
 
 <script>
 
+var tela = window.document.getElementById("demo");
+
+function dis1(){
+Number(tela.innerText += "1");
+}
+function dis2(){
+tela.innerText = "2";
+}
+function dis3(){
+tela.innerText = "3";
+}
+function dis4(){
+tela.innerText = "4";
+}
+function dis5(){
+tela.innerText = "5";
+}
+function dis6(){
+tela.innerText = "6";
+}
+function dis7(){
+tela.innerText = "7";
+}
+function dis8(){
+tela.innerText = "8";
+}
+function dis9(){
+tela.innerText = "9";
+}
+function dis0(){
+tela.innerText = "0";
+}
+function disadicao(){
+tela.innerText = "+"
+}
+function dissubtracao(){
+tela.innerText = "-"
+}
+function dismultiplicacao(){
+tela.innerText = "x"
+}
+function disdivisao(){
+tela.innerText = "÷"
+}
 function emp(){
-return "";
+tela.innerText = "0";
 }
 function adicao(a,b){
 return a + b;
