@@ -101,7 +101,7 @@ background-color: rgb(128, 77, 77);
 var tela = window.document.getElementById("demo");
 
 function noZero(){
-    if(tela.innerText==0){
+    if(tela.innerText=="0"){
     tela.innerText = null;}
 }
 
