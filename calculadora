@@ -24,7 +24,7 @@ height: 300px;
 border-bottom: 6px solid black;
 border-top: 10px solid black;
 font-size: 75px;
-background-image: linear-gradient(rgb(128, 128, 128), rgb(175, 161, 161));
+background-image: linear-gradient(rgb(162, 120, 179), rgb(79, 170, 170));
 text-align: right;
 overflow: auto;
 }
