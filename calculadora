@@ -206,6 +206,7 @@ function emp(){
 tela.innerText = "0";
 valor1 = 0;
 valor2 = 0;
+operador = 0;
 }
 function deletar(){
 tela.innerText = tela.innerText.slice(0, -1);
