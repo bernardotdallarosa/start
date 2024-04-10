@@ -34,6 +34,13 @@ display: flex;
 align-items: center;
 }
 
+.screencomplement{
+display: flex;
+align-items: flex-end;
+flex-direction: row-reverse;
+overflow-y: auto;
+}
+
 .line{
 flex: 1;
 }
@@ -67,6 +74,8 @@ background-color: rgb(128, 77, 77);
 </head>
 <body>
 <div class="skeleton">
+    <div class="screencomplement">
+    </div>
     <div id="demo" class="screen">
      0
     </div>
@@ -88,10 +97,10 @@ background-color: rgb(128, 77, 77);
         <button onclick="dis8()">8</button>
         <button onclick="dis9()">9</button>
         <button onclick="disdivisao()">÷</button>
-        <button onclick="">Del</button>
+        <button onclick="deletar()">Del</button>
         <button onclick="dis0()">0</button>
         <button onclick="dispoint()">.</button>
-        <button onclick="">=</button>
+        <button onclick="igual()">=</button>
         </div>
     </div>
 </div>
@@ -99,10 +108,22 @@ background-color: rgb(128, 77, 77);
 <script>
 
 var tela = window.document.getElementById("demo");
+var valor1 = 0;
+var valor2 = 0;
+var operador;
+
+function qualValor(){
+if(valor1 == 0){valor1 = tela.innerText;}
+else if(valor2 == 0){valor2 = tela.innerText;}
+}
+
+function valorSequente(){
+valor3 = tela.innerText;
+}
 
 function noZero(){
-    if(tela.innerText=="0"){
-    tela.innerText = null;}
+if(tela.innerText=="0"){
+tela.innerText = null;}
 }
 
 function dis1(){
@@ -146,34 +167,64 @@ function dis0(){
 tela.innerText += 0;
 }
 function disadicao(){
-tela.innerText += "+"
+    qualValor();
+tela.innerText = "0";
+operador = 1;
 }
 function dissubtracao(){
-tela.innerText += "-"
+    qualValor();
+tela.innerText = "0";
+operador = 2;
 }
 function dismultiplicacao(){
-tela.innerText += "x"
+    qualValor();
+tela.innerText = "0";
+operador = 3;
 }
 function disdivisao(){
-tela.innerText += "÷"
+    qualValor();
+tela.innerText = "0";
+operador = 4;
+}
+function igual(){
+qualValor();
+switch(operador){
+    case 1: resultado = adicao(valor1, valor2);
+    break;
+    case 2: resultado = subtracao(valor1, valor2);
+    break;
+    case 3: resultado = multiplicacao(valor1, valor2);
+    break;
+    case 4: resultado = divisao(valor1, valor2);
+    break;
+}
+tela.innerText = resultado;
+if(tela.innerText == 0){tela.innerText = "0";}
+operador = 0;
 }
 function emp(){
-tela.innerText = 0;
+tela.innerText = "0";
+valor1 = 0;
+valor2 = 0;
+}
+function deletar(){
+tela.innerText = tela.innerText.slice(0, -1);
+if (tela.innerText == ""){tela.innerText = "0"};
 }
 function dispoint(){
 tela.innerText += ".";
 }
 function adicao(a,b){
-return a + b;
+return Number(a) + Number(b);
 }
 function subtracao(a,b){
-return a - b;
+return Number(a) - Number(b);
 }
 function multiplicacao(a,b){
-return a * b;
+return Number(a) * Number(b);
 }
 function divisao(a,b){
-return a / b;
+return Number(a) / Number(b);
 }
 
 </script>
