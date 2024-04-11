@@ -79,11 +79,11 @@ background-color: rgb(128, 77, 77);
     <div id="demo" class="screen">
      0
     </div>
-    <div class="keys">
+   <div class="keys">
         <div class="line">
         <button onclick="emp()">AC</button>
-        <button onclick="">()</button>
-        <button onclick="">%</button>
+        <button onclick="disnegativo()">(-)</button>
+        <button onclick="disporcentagem()">%</button>
         <button onclick="disadicao()">+</button>
         <button onclick="dis1()">1</button>
         <button onclick="dis2()">2</button>
@@ -108,6 +108,8 @@ background-color: rgb(128, 77, 77);
 <script>
 
 var tela = window.document.getElementById("demo");
+var tela2 = window.document.getElementById("aux");
+var tela3 = window.document.getElementById("result")
 var valor1 = 0;
 var valor2 = 0;
 var operador;
@@ -116,14 +118,18 @@ function qualValor(){
 if(valor1 == 0){valor1 = tela.innerText;}
 else if(valor2 == 0){valor2 = tela.innerText;}
 }
-
-function valorSequente(){
-valor3 = tela.innerText;
+function transicao(){
+tela2.innerText = tela.innerText;
 }
 
 function noZero(){
 if(tela.innerText=="0"){
 tela.innerText = null;}
+}
+
+function qualTela(){
+if(tela2.innerText == null){tela2.innerText}
+else{tela3.innerText}
 }
 
 function dis1(){
@@ -186,6 +192,17 @@ function disdivisao(){
 tela.innerText = "0";
 operador = 4;
 }
+function disporcentagem(){
+    qualValor();
+tela.innerText = "0";
+operador = 5;
+}
+function disnegativo(){
+    noZero();
+var temporario = tela.innerText;
+tela.innerText = null;
+tela.innerText = "-" + temporario;
+}
 function igual(){
 qualValor();
 switch(operador){
@@ -196,6 +213,8 @@ switch(operador){
     case 3: resultado = multiplicacao(valor1, valor2);
     break;
     case 4: resultado = divisao(valor1, valor2);
+    break;
+    case 5: resultado = porcentagem(valor1, valor2);
     break;
 }
 tela.innerText = resultado;
@@ -226,6 +245,9 @@ return Number(a) * Number(b);
 }
 function divisao(a,b){
 return Number(a) / Number(b);
+}
+function porcentagem(a,b){
+return Number(a/100) * Number(b);
 }
 
 </script>
