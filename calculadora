@@ -258,7 +258,6 @@ else{return Number(a) / Number(b)};
 function porcentagem(a,b){
 return Number(a/100) * Number(b);
 }
-
 </script>
 </body>
 </html>
