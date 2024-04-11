@@ -82,7 +82,7 @@ background-color: rgb(128, 77, 77);
    <div class="keys">
         <div class="line">
         <button onclick="emp()">AC</button>
-        <button onclick="disnegativo()">(-)</button>
+        <button onclick="disnegativo()">+/-</button>
         <button onclick="disporcentagem()">%</button>
         <button onclick="disadicao()">+</button>
         <button onclick="dis1()">1</button>
@@ -109,7 +109,7 @@ background-color: rgb(128, 77, 77);
 
 var tela = window.document.getElementById("demo");
 var tela2 = window.document.getElementById("aux");
-var tela3 = window.document.getElementById("result")
+var tela3 = window.document.getElementById("result");
 var valor1 = 0;
 var valor2 = 0;
 var operador;
@@ -199,9 +199,15 @@ operador = 5;
 }
 function disnegativo(){
     noZero();
+    if(Number(tela.innerText) >= 0){
 var temporario = tela.innerText;
 tela.innerText = null;
-tela.innerText = "-" + temporario;
+tela.innerText = "-" + temporario;}
+else{
+var temporario = tela.innerText;
+tela.innerText = null;
+temporario = Number(-(temporario))
+tela.innerText = temporario;}
 }
 function igual(){
 qualValor();
@@ -244,7 +250,8 @@ function multiplicacao(a,b){
 return Number(a) * Number(b);
 }
 function divisao(a,b){
-return Number(a) / Number(b);
+    if(Number(b) == 0){return "Indeterminado";}
+else{return Number(a) / Number(b)};
 }
 function porcentagem(a,b){
 return Number(a/100) * Number(b);
