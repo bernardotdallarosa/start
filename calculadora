@@ -121,17 +121,14 @@ else if(valor2 == 0){valor2 = tela.innerText;}
 function transicao(){
 tela2.innerText = tela.innerText;
 }
-
 function noZero(){
 if(tela.innerText=="0"){
 tela.innerText = null;}
 }
-
 function qualTela(){
 if(tela2.innerText == null){tela2.innerText}
 else{tela3.innerText}
 }
-
 function dis1(){
     noZero();
 tela.innerText += 1;
@@ -226,12 +223,16 @@ switch(operador){
 tela.innerText = resultado;
 if(tela.innerText == 0){tela.innerText = "0";}
 operador = 0;
+valor1 = 0;
+resultado = 0;
+valor2 = 0;
 }
 function emp(){
 tela.innerText = "0";
 valor1 = 0;
 valor2 = 0;
 operador = 0;
+resultado = 0;
 }
 function deletar(){
 tela.innerText = tela.innerText.slice(0, -1);
