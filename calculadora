@@ -200,6 +200,7 @@ function disnegativo(){
 var temporario = tela.innerText;
 tela.innerText = null;
 tela.innerText = "-" + temporario;}
+else if(tela.innerText == "-"){tela.innerText = 0;}
 else{
 var temporario = tela.innerText;
 tela.innerText = null;
