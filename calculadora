@@ -8,7 +8,8 @@ display: block;
 margin-left: auto;
 margin-right: auto;
 width: 500px;
-height: 800px;
+height: 780px;
+border-radius: 30px;
 background-image: linear-gradient(to bottom right,rgb(12, 201, 214),rgb(15, 132, 132), rgb(12, 68, 198));
 border-style: solid;
 border-color: rgb(0, 0, 0);
@@ -20,11 +21,12 @@ display: flex;
 align-items: flex-end;
 flex-direction: row-reverse;
 width: 500px;
-height: 300px;
+height: 280px;
 border-bottom: 6px solid black;
 border-top: 10px solid black;
+border-radius: 25px;
 font-size: 75px;
-background-image: linear-gradient(rgb(162, 120, 179), rgb(79, 170, 170));
+background-image: linear-gradient(rgb(49, 47, 49), rgb(79, 170, 170));
 text-align: right;
 overflow: auto;
 }
@@ -32,13 +34,6 @@ overflow: auto;
 .keys{
 display: flex;
 align-items: center;
-}
-
-.screencomplement{
-display: flex;
-align-items: flex-end;
-flex-direction: row-reverse;
-overflow-y: auto;
 }
 
 .line{
@@ -55,8 +50,10 @@ height: 75px;
 width: 75px;
 box-shadow: 5px 5px 2px;
 text-align: center;
+font-style: bold;
+color:rgb(0, 0, 0);
 font-family: 'Courier New', monospace;
-text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+text-shadow: -1px 0 rgb(161, 23, 23), 0 1px rgb(153, 22, 22), 1px 0 rgb(163, 24, 24), 0 -1px rgb(156, 10, 10);
 display: inline-block;
 font-size: 32px;
 margin: 10px 23px;
@@ -72,10 +69,8 @@ background-color: rgb(128, 77, 77);
 
 </style>
 </head>
-<body>
+<body style="background-color: gray">
 <div class="skeleton">
-    <div class="screencomplement">
-    </div>
     <div id="demo" class="screen">
      0
     </div>
@@ -108,8 +103,6 @@ background-color: rgb(128, 77, 77);
 <script>
 
 var tela = window.document.getElementById("demo");
-var tela2 = window.document.getElementById("aux");
-var tela3 = window.document.getElementById("result");
 var valor1 = 0;
 var valor2 = 0;
 var operador;
@@ -118,82 +111,92 @@ function qualValor(){
 if(valor1 == 0){valor1 = tela.innerText;}
 else if(valor2 == 0){valor2 = tela.innerText;}
 }
-function transicao(){
-tela2.innerText = tela.innerText;
-}
+
 function noZero(){
 if(tela.innerText=="0"){
 tela.innerText = null;}
 }
-function qualTela(){
-if(tela2.innerText == null){tela2.innerText}
-else{tela3.innerText}
-}
+
 function dis1(){
     noZero();
 tela.innerText += 1;
 }
+
 function dis2(){
     noZero();
 tela.innerText += 2;
 }
+
 function dis3(){
     noZero();
 tela.innerText += 3;
 }
+
 function dis4(){
     noZero();
 tela.innerText += 4;
 }
+
 function dis5(){
     noZero();
 tela.innerText += 5;
 }
+
 function dis6(){
     noZero();
 tela.innerText += 6;
 }
+
 function dis7(){
     noZero();
 tela.innerText += 7;
 }
+
 function dis8(){
     noZero();
 tela.innerText += 8;
 }
+
 function dis9(){
     noZero();
 tela.innerText += 9;
 }
+
 function dis0(){
     noZero();
 tela.innerText += 0;
 }
+
 function disadicao(){
     qualValor();
 tela.innerText = "0";
 operador = 1;
 }
+
 function dissubtracao(){
     qualValor();
 tela.innerText = "0";
 operador = 2;
 }
+
 function dismultiplicacao(){
     qualValor();
 tela.innerText = "0";
 operador = 3;
 }
+
 function disdivisao(){
     qualValor();
 tela.innerText = "0";
 operador = 4;
 }
+
 function disporcentagem(){
     qualValor();
 tela.innerText = "0";
 operador = 5;
 }
+
 function disnegativo(){
     noZero();
     if(Number(tela.innerText) >= 0){
@@ -207,6 +210,7 @@ tela.innerText = null;
 temporario = Number(-(temporario))
 tela.innerText = temporario;}
 }
+
 function igual(){
 qualValor();
 switch(operador){
@@ -228,6 +232,7 @@ valor1 = 0;
 resultado = 0;
 valor2 = 0;
 }
+
 function emp(){
 tela.innerText = "0";
 valor1 = 0;
@@ -235,26 +240,34 @@ valor2 = 0;
 operador = 0;
 resultado = 0;
 }
+
 function deletar(){
 tela.innerText = tela.innerText.slice(0, -1);
 if (tela.innerText == ""){tela.innerText = "0"};
 }
+
 function dispoint(){
-tela.innerText += ".";
+if(tela.innerText.includes(".")){tela.innerText = tela.innerText}
+else{tela.innerText += ".";}
 }
+
 function adicao(a,b){
 return Number(a) + Number(b);
 }
+
 function subtracao(a,b){
 return Number(a) - Number(b);
 }
+
 function multiplicacao(a,b){
 return Number(a) * Number(b);
 }
+
 function divisao(a,b){
-    if(Number(b) == 0){return "Indeterminado";}
+if(Number(b) == 0){return "Indeterminado";}
 else{return Number(a) / Number(b)};
 }
+
 function porcentagem(a,b){
 return Number(a/100) * Number(b);
 }
